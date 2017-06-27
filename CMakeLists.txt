@@ -9,8 +9,16 @@ include_directories(
 
 option(SFML_BUILD_EXAMPLES OFF)
 option(SFML_BUILD_DOC OFF)
-option(SFML_BUILD_SHADER_LIBS OFF)
-option(SFML_USE_STATIC_STD_LIBS ON) # Windows only
+option(SFML_BUILD_SHADER_LIBS ON)
+if (WIN32)
+  option(SFML_USE_STATIC_STD_LIBS OFF) # Windows only
+elseif (APPLE)
+  if ((${CMAKE_SYSTEM_NAME} MATCHES "Darwin"))
+    set(SFML_BUILD_FRAMEWORKS ON)
+    set(SFML_OSX_ARCHITECTURES "x86_64")
+    set(SFML_INSTALL_XCODE_TEMPLATES OFF)
+  endif()
+endif()
 option(BUILD_SHARED_LIBS OFF)
 
 add_definitions(-DSFML_STATIC)
@@ -26,19 +34,26 @@ set(ALL_LIBS
   sfml-main
   )
 
-file(GLOB NOTEMANIA_SOURCES Notemania/src/*.cpp)
-file(GLOB NOTEMANIA_HEADERS Notemania/include/*.hpp
-  Notemania/include/*.h)
-file(GLOB NOTEMANIA_RESOURCES Notemania/resources/images/*.png
-                                  Notemania/resources/images/*.jpg
-                                  Notemania/resources/sounds/*.mp3
-                                  Notemania/resources/sounds/*.wav
-                                  Notemania/resources/*.txt)
+file(GLOB NOTEMANIA_SOURCES ${PROJECT_NAME}/src/*.cpp)
+file(GLOB NOTEMANIA_HEADERS ${PROJECT_NAME}/include/*.hpp
+  ${PROJECT_NAME}/include/*.h)
+file(GLOB NOTEMANIA_RESOURCES ${PROJECT_NAME}/resources/images/*.png
+                                  ${PROJECT_NAME}/resources/images/*.jpg
+                                  ${PROJECT_NAME}/resources/sounds/*.mp3
+                                  ${PROJECT_NAME}/resources/sounds/*.wav
+                                  ${PROJECT_NAME}/resources/*.txt)
 file(GLOB NOTEMANIA_CONFIGS CMakeLists.txt)
 
 add_definitions(-DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
+add_definitions(-DCMAKE-C-FLAGS)
 
-add_executable(${PROJECT_NAME}
+if (WIN32)
+  set(ADDITIONAL_FLAGS WIN32)
+else ()
+  set(ADDITIONAL_FLAGS "")
+endif()
+
+add_executable(${PROJECT_NAME} ${ADDITIONAL_FLAGS}
   ${NOTEMANIA_SOURCES} ${NOTEMANIA_HEADERS}
   ${NOTEMANIA_RESOURCES} ${NOTEMANIA_CONFIGS}
   )
