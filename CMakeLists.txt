@@ -21,10 +21,6 @@ elseif (APPLE)
 endif()
 option(BUILD_SHARED_LIBS OFF)
 
-add_definitions(-DSFML_STATIC)
-
-find_package(OpenGL REQUIRED)
-
 set(ALL_LIBS
   ${SFML_LIBRARY}
   sfml-system

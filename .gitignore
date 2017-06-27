@@ -3,3 +3,7 @@
 [Bb]uild/
 *.exe
 *.#*
+*.ilk
+*.pdb
+*.tlog
+*.log
