@@ -9,6 +9,7 @@ const double MsPerUpdate = 1 / TargetFps;
 
 int main()
 {
+	//Тут я добавил комментарий для проверки.
     bool fullscreen = false;
 
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!", sf::Style::None);
