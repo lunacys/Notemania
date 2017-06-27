@@ -5,6 +5,7 @@ add_subdirectory(ThirdParty)
 
 include_directories(
   ThirdParty/sfml-2.4.2/include/
+  ${PROJECT_NAME}/include/
   )
 
 option(SFML_BUILD_EXAMPLES OFF)
