@@ -3,27 +3,27 @@
 
 namespace noma
 {
-    enum class NoteType
+    enum class HitObjectType
     {
         Click,
         Hold
     };
 
-    class Note
+    class HitObject
     {
     public:
-        Note(int x, int time, NoteType type, int endTime = 0);
-        virtual ~Note();
+        HitObject(int x, int time, HitObjectType type, int endTime = 0);
+        virtual ~HitObject();
 
         int get_x() const;
         int get_time() const;
         int get_endtime() const;
-        NoteType get_type() const;
+        HitObjectType get_type() const;
 
         bool is_hold_note() const;
 
     private:
-        NoteType type_;
+        HitObjectType type_;
         int x_;
         int time_;
         int endTime_;

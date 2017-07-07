@@ -1,9 +1,9 @@
-#include "Note.hpp"
+#include "HitObject.hpp"
 #include <stdexcept>
 
 namespace noma
 {
-    Note::Note(int x, int time, NoteType type, int endTime)
+    HitObject::HitObject(int x, int time, HitObjectType type, int endTime)
     {
         if (x < 1 || x > 9) throw std::runtime_error("x cannot be less than 1 and greater than 9");
         if (endTime < time) throw std::runtime_error("endTime cannot be less than time");
@@ -13,30 +13,30 @@ namespace noma
         endTime_ = (endTime == 0 ? time : endTime);
     }
 
-    Note::~Note() { }
+    HitObject::~HitObject() { }
 
-    int Note::get_x() const
+    int HitObject::get_x() const
     {
         return x_;
     }
 
-    int Note::get_time() const
+    int HitObject::get_time() const
     {
         return time_;
     }
 
-    int Note::get_endtime() const
+    int HitObject::get_endtime() const
     {
         return endTime_;
     }
 
-    NoteType Note::get_type() const
+    HitObjectType HitObject::get_type() const
     {
         return type_;
     }
 
-    bool Note::is_hold_note() const
+    bool HitObject::is_hold_note() const
     {
-        return type_ == NoteType::Hold;
+        return type_ == HitObjectType::Hold;
     }
 }
