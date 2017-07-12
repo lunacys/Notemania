@@ -1,5 +1,5 @@
-#ifndef NOTEMANIA_NOTEMANIA_HPP_
-#define NOTEMANIA_NOTEMANIA_HPP_
+#ifndef NOMA_NOTEMANIA_HPP_
+#define NOMA_NOTEMANIA_HPP_
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -38,4 +38,4 @@ namespace noma
     };
 } // namespace noma
 
-#endif // NOTEMANIA_NOTEMANIA_HPP_
+#endif // NOMA_NOTEMANIA_HPP_

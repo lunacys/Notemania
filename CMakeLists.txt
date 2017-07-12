@@ -28,18 +28,30 @@ set(ALL_LIBS
   sfml-window
   sfml-graphics
   sfml-audio
+  sfml-network
   sfml-main
   )
 
 file(GLOB NOTEMANIA_SOURCES ${PROJECT_NAME}/src/*.cpp)
-file(GLOB NOTEMANIA_HEADERS ${PROJECT_NAME}/include/*.hpp
-  ${PROJECT_NAME}/include/*.h)
-file(GLOB NOTEMANIA_RESOURCES ${PROJECT_NAME}/resources/images/*.png
-                                  ${PROJECT_NAME}/resources/images/*.jpg
-                                  ${PROJECT_NAME}/resources/sounds/*.mp3
-                                  ${PROJECT_NAME}/resources/sounds/*.wav
-                                  ${PROJECT_NAME}/resources/*.txt)
-file(GLOB NOTEMANIA_CONFIGS CMakeLists.txt)
+file(GLOB NOTEMANIA_HEADERS
+  ${PROJECT_NAME}/include/*.hpp
+  ${PROJECT_NAME}/include/*.h
+  )
+file(GLOB NOTEMANIA_IMAGES ${PROJECT_NAME}/data/images/*.jpg
+  ${PROJECT_NAME}/data/images/*.png
+  )
+file(GLOB NOTEMANIA_MUSIC ${PROJECT_NAME}/data/music/*.ogg)
+file(GLOB NOTEMANIA_FONTS ${PROJECT_NAME}/data/fonts/*.png
+  ${PROJECT_NAME}/data/fonts/*.txt
+  ${PROJECT_NAME}/data/fonts/*.ttf
+  )
+file(GLOB NOTEMANIA_SHADERS ${PROJECT_NAME}/data/shaders/*.vert
+  ${PROJECT_NAME}/data/shaders/*.frag
+  )
+file(GLOB NOTEMANIA_SFX ${PROJECT_NAME}/data/sfx/*.wav
+  ${PROJECT_NAME}/data/images/*.png
+  )
+file(GLOB NOTEMANIA_CONFIGS CMakeLists.txt )
 
 add_definitions(-DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
 add_definitions(-DCMAKE-C-FLAGS)
@@ -52,7 +64,9 @@ endif()
 
 add_executable(${PROJECT_NAME} ${ADDITIONAL_FLAGS}
   ${NOTEMANIA_SOURCES} ${NOTEMANIA_HEADERS}
-  ${NOTEMANIA_RESOURCES} ${NOTEMANIA_CONFIGS}
+  ${NOTEMANIA_IMAGES} ${NOTEMANIA_MUSIC}
+  ${NOTEMANIA_FONTS} ${NOTEMANIA_SHADERS}
+  ${NOTEMANIA_SFX}  ${NOTEMANIA_CONFIGS}
   )
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
