@@ -48,7 +48,7 @@ namespace noma
 
     private:
         std::vector<std::unique_ptr<HitObject>> hitObjects_;
-        std::vecotr<std::unique_ptr<TimingPoint>> timingPoints_;
+        std::vector<std::unique_ptr<TimingPoint>> timingPoints_;
     };
 } // namespace noma
 
