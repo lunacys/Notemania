@@ -4,9 +4,7 @@
 #include <string>
 #include <memory>
 #include "Utils.hpp"
-#include "Note.hpp"
 #include "TimingPoint.hpp"
-#include "BeatmapSettings.hpp"
 #include "Beatmap.hpp"
 
 namespace noma
