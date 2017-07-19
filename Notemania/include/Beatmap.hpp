@@ -9,16 +9,16 @@
 
 namespace noma
 {
-    typedef struct
+    struct BeatmapSettingsGeneral
     {
         std::string audio_filename;
         int preview_time;
-    } BeatmapSettingsGeneral;
-    typedef struct
+    };
+    struct BeatmapSettingsEditor
     {
         int beat_divisor;
-    } BeatmapSettingsEditor;
-    typedef struct
+    };
+    struct BeatmapSettingsMetadata
     {
         std::string title;
         std::string artist;
@@ -27,13 +27,13 @@ namespace noma
         std::string tags;
         int beatmap_id;
         int beatmap_set_id;
-    } BeatmapSettingsMetadata;
-    typedef struct
+    };
+    struct BeatmapSettingsDifficulty
     {
         float hp_drain_rate;
         float overall_difficulty;
         int key_amount;
-    } BeatmapSettingsDifficulty;
+    };
     struct BeatmapSettings
     {
         BeatmapSettingsGeneral general;
@@ -44,11 +44,13 @@ namespace noma
     class Beatmap
     {
     public:
-        
+        Beatmap();
+        virtual ~Beatmap();
 
-    private:
-        std::vector<std::unique_ptr<HitObject>> hitObjects_;
-        std::vector<std::unique_ptr<TimingPoint>> timingPoints_;
+        BeatmapSettings* settings;
+
+        std::vector<TimingPoint*> timing_points;
+        std::vector<HitObject*> hit_objects;
     };
 } // namespace noma
 

@@ -4,6 +4,8 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "Playfield.hpp"
+#include "Beatmap.hpp"
 
 namespace noma
 {
@@ -31,8 +33,12 @@ namespace noma
 
         bool is_running_;
 
+        sf::Event event_;
+
         sf::RenderWindow window_;
         sf::Clock total_clock_;
+
+        Playfield* playfield_;
 
         void main_loop();
     };

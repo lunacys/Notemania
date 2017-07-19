@@ -56,11 +56,11 @@ file(GLOB NOTEMANIA_CONFIGS CMakeLists.txt )
 add_definitions(-DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
 add_definitions(-DCMAKE-C-FLAGS)
 
-if (WIN32)
-  set(ADDITIONAL_FLAGS WIN32)
-else ()
-  set(ADDITIONAL_FLAGS "")
-endif()
+#if (WIN32)
+#  set(ADDITIONAL_FLAGS WIN32)
+#else ()
+#  set(ADDITIONAL_FLAGS "")
+#endif()
 
 add_executable(${PROJECT_NAME} ${ADDITIONAL_FLAGS}
   ${NOTEMANIA_SOURCES} ${NOTEMANIA_HEADERS}

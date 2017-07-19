@@ -3,17 +3,23 @@
 
 #include <string>
 #include <memory>
-#include "Utils.hpp"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <istream>
 #include "TimingPoint.hpp"
 #include "Beatmap.hpp"
+#include <iomanip>
+#include <algorithm>
+#include <iterator>
 
 namespace noma
 {
     class BeatmapReader
     {
     public:
-        static std::unique_ptr<Beatmap> load_beatmap_from_file(std::string filename);
-        static void save_beatmap_to_file(std::unique_ptr<Beatmap> beatmap, std::string filename); 
+        static Beatmap* load_beatmap_from_file(std::string filename);
+        static void save_beatmap_to_file(Beatmap* beatmap, std::string filename);
 
     private:
     };
