@@ -23,8 +23,11 @@ namespace noma
         Beatmap* current_beatmap_;
         sf::RenderWindow* window_;
 
-        sf::Sprite* single_field_sprite_;
+        double time_;
+
+        sf::Sprite* field_sprite_;
         sf::Sprite* key_buttons_sprite_;
+        sf::Texture* note_texture_;
     };
 } // namespace noma
 

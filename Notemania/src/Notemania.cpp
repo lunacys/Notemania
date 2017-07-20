@@ -6,16 +6,16 @@
 namespace noma
 {
     Notemania::Notemania()
-        : window_width_(800), window_height_(600), is_running_(false)
+        : window_width_(1366), window_height_(768), is_running_(false)
     {
-        playfield_ = new Playfield(&window_, nullptr);
+        
     }
 
     Notemania::~Notemania() { }
 
     void Notemania::run()
     {
-        window_.create(sf::VideoMode(window_width_, window_height_, 32), "Notemania");
+        window_.create(sf::VideoMode(window_width_, window_height_, 32), "Notemania", sf::Style::Fullscreen);
         initialize();
         load_content();
         total_clock_.restart();
@@ -51,10 +51,11 @@ namespace noma
         test->hit_objects.push_back(new HitObject(3, 0, HitObjectType::Click));
         test->hit_objects.push_back(new HitObject(4, 0, HitObjectType::Click));
         test->hit_objects.push_back(new HitObject(2, 100, HitObjectType::Hold, 200));
-
         //BeatmapReader::save_beatmap_to_file(test, "test.noma");
 
-        BeatmapReader::load_beatmap_from_file("test.noma");
+        //BeatmapReader::load_beatmap_from_file("test.noma");
+
+        playfield_ = new Playfield(&window_, test);
     }
 
     void Notemania::load_content()
