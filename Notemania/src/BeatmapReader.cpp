@@ -39,6 +39,7 @@ namespace noma
                 {
                     general.audio_filename = get_value("AudioFilename:");
                     general.preview_time = std::stoi(get_value("PreviewTime:"));
+                    general.background_filename = get_value("BackgroundFilename:");
                 }
                 std::getline(ss, tmp);
                 if (tmp == "[Editor]")
@@ -108,11 +109,25 @@ namespace noma
                                                            std::stoi(tokens[1]),
                                                            HitObjectType::Hold,
                                                            std::stoi(tokens[3]));
+                            std::cout << tokens[1] << std::endl;
+                            std::cout << tokens[3] << std::endl;
                             hitObjects.push_back(obj);
                         }
                     }
                 }
             }
+            Beatmap* bm = new Beatmap();
+            bm->settings = new BeatmapSettings();
+            bm->settings->general = general;
+            bm->settings->metadata = metadata;
+            bm->settings->editor = editor;
+            bm->settings->difficulty = diff;
+
+            bm->timing_points = timingPoints;
+            bm->hit_objects = hitObjects;
+
+            return bm;
+
         }
 
         return nullptr;
@@ -128,6 +143,9 @@ namespace noma
                 << std::endl;
         outFile << "PreviewTime:"
                 << std::to_string(beatmap->settings->general.preview_time)
+                << std::endl;
+        outFile << "BackgroundFilename:"
+                << beatmap->settings->general.background_filename
                 << std::endl;
 
         outFile << "[Editor]\n";

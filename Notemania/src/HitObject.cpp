@@ -6,7 +6,7 @@ namespace noma
     HitObject::HitObject(int x, int time, HitObjectType type, int endTime)
     {
         if (x < 1 || x > 9) throw std::runtime_error("x cannot be less than 1 and greater than 9");
-        if (endTime < time) throw std::runtime_error("endTime cannot be less than time");
+        //if (endTime < time) throw std::runtime_error("endTime cannot be less than time");
         x_ = x;
         time_ = time;
         type_ = type;
@@ -38,5 +38,15 @@ namespace noma
     bool HitObject::is_hold_note() const
     {
         return type_ == HitObjectType::Hold;
+    }
+
+    bool HitObject::is_pressed() const
+    {
+        return is_pressed_;
+    }
+
+    void HitObject::press()
+    {
+        is_pressed_ = true;
     }
 }

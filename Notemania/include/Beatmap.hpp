@@ -13,6 +13,7 @@ namespace noma
     {
         std::string audio_filename;
         int preview_time;
+        std::string background_filename;
     };
     struct BeatmapSettingsEditor
     {

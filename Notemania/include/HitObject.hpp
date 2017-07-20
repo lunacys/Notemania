@@ -22,11 +22,15 @@ namespace noma
 
         bool is_hold_note() const;
 
+        void press();
+        bool is_pressed() const;
+
     private:
         HitObjectType type_;
         int x_;
         int time_;
         int endTime_;
+        bool is_pressed_;
     };
 } // namespace noma
 
