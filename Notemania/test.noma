@@ -1,0 +1,25 @@
+[General]
+AudioFilename:hello there.ogg
+PreviewTime:1234
+[Editor]
+BeatDivisor:4
+[Metadata]
+Title:test title
+Artist:test artist
+Creator:loonacuse
+Version:test version
+Tags:there are tags
+BeatmapID:1
+BeatmapSetID:1
+[Difficulty]
+HPDrainRate:4
+OverallDifficulty:6
+KeyAmount:4
+[TimingPoints]
+0 1423.345341231515 4 100 0
+[HitObjects]
+1 0 1
+2 0 1
+3 0 1
+4 0 1
+2 100 2 200
