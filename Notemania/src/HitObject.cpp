@@ -49,4 +49,9 @@ namespace noma
     {
         is_pressed_ = true;
     }
+
+    void HitObject::unpress()
+    {
+        is_pressed_ = false;
+    }
 }

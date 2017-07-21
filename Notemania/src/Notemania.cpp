@@ -30,33 +30,12 @@ namespace noma
 
     void Notemania::initialize()
     {
-        /*Beatmap* test = new Beatmap();
-        test->settings = new BeatmapSettings();
-        test->settings->general.audio_filename = "hello there.ogg";
-        test->settings->general.preview_time = 1234;
-        test->settings->general.background_filename = "test.png";
-        test->settings->editor.beat_divisor = 4;
-        test->settings->metadata.title = "test title";
-        test->settings->metadata.artist = "test artist";
-        test->settings->metadata.creator = "loonacuse";
-        test->settings->metadata.version = "test version";
-        test->settings->metadata.tags = "there are tags";
-        test->settings->metadata.beatmap_id = 1;
-        test->settings->metadata.beatmap_set_id = 1;
-        test->settings->difficulty.hp_drain_rate = 4;
-        test->settings->difficulty.overall_difficulty = 6;
-        test->settings->difficulty.key_amount = 4;
-        test->timing_points.push_back(new TimingPoint(0, 1423.34534123, 4, 100, false));
-        test->hit_objects.push_back(new HitObject(1, 0, HitObjectType::Click));
-        test->hit_objects.push_back(new HitObject(2, 0, HitObjectType::Click));
-        test->hit_objects.push_back(new HitObject(3, 0, HitObjectType::Click));
-        test->hit_objects.push_back(new HitObject(4, 0, HitObjectType::Click));
-        test->hit_objects.push_back(new HitObject(2, 100, HitObjectType::Hold, 200));*/
-        //BeatmapReader::save_beatmap_to_file(test, "test.noma");
 
-        Beatmap* bm = BeatmapReader::load_beatmap_from_file("test.noma");
+        Beatmap* bm = BeatmapReader::load_beatmap_from_file("maps/NOMA - Brain Power/NOMA - Brain Power.noma");
 
-        playfield_ = new Playfield(&window_, bm);
+        //playfield_ = new Playfield(&window_, bm);
+        screen_manager_ = new ScreenManager();
+        screen_manager_->register_screen(new Playfield(&window_, bm), "Playfield");
     }
 
     void Notemania::load_content()
@@ -69,12 +48,12 @@ namespace noma
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
             exit();
 
-        playfield_->update(dt);
+        screen_manager_->update(dt);
     }
 
     void Notemania::render()
     {
-        playfield_->render();
+        screen_manager_->render();
     }
 
     void Notemania::main_loop()

@@ -4,6 +4,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "ScreenManager.hpp"
 #include "Playfield.hpp"
 #include "Beatmap.hpp"
 
@@ -38,7 +39,7 @@ namespace noma
         sf::RenderWindow window_;
         sf::Clock total_clock_;
 
-        Playfield* playfield_;
+        ScreenManager* screen_manager_;
 
         void main_loop();
     };

@@ -24,6 +24,7 @@ namespace noma
 
         void press();
         bool is_pressed() const;
+        void unpress();
 
     private:
         HitObjectType type_;
