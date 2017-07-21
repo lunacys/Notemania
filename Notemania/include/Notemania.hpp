@@ -1,9 +1,12 @@
-#ifndef NOTEMANIA_NOTEMANIA_HPP_
-#define NOTEMANIA_NOTEMANIA_HPP_
+#ifndef NOMA_NOTEMANIA_HPP_
+#define NOMA_NOTEMANIA_HPP_
 
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include "ScreenManager.hpp"
+#include "Playfield.hpp"
+#include "Beatmap.hpp"
 
 namespace noma
 {
@@ -31,11 +34,15 @@ namespace noma
 
         bool is_running_;
 
+        sf::Event event_;
+
         sf::RenderWindow window_;
         sf::Clock total_clock_;
+
+        ScreenManager* screen_manager_;
 
         void main_loop();
     };
 } // namespace noma
 
-#endif // NOTEMANIA_NOTEMANIA_HPP_
+#endif // NOMA_NOTEMANIA_HPP_
