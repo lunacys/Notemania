@@ -5,8 +5,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "ScreenManager.hpp"
-#include "Playfield.hpp"
-#include "Beatmap.hpp"
+//#include "Playfield.hpp"
+
+
 
 namespace noma
 {

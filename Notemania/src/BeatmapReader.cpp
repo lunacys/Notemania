@@ -1,4 +1,10 @@
+#include <sstream>
+#include <iomanip>
+#include <iterator>
 #include "BeatmapReader.hpp"
+#include "LogHelper.hpp"
+#include "Beatmap.hpp"
+
 
 namespace noma
 {
@@ -8,12 +14,16 @@ namespace noma
 
         if (file)
         {
+            L("Opening Beatmap file: " + filename);
             std::stringstream ss;
 
+            L("Reading Buffer");
             ss << file.rdbuf();
 
+            L("Closing the Beatmap file");
             file.close();
 
+            L("Initializing variables...");
             BeatmapSettingsGeneral general;
             BeatmapSettingsMetadata metadata;
             BeatmapSettingsEditor editor;
@@ -21,53 +31,69 @@ namespace noma
 
             std::vector<TimingPoint*> timingPoints;
             std::vector<HitObject*> hitObjects;
-
-            std::string tmp;
+            
+            std::string tmp = "";
 
             auto get_value = [&ss, &tmp] (const std::string& key) -> std::string
                 {
-                    std::getline(ss, tmp);
+                    L("Getting value: " + key);
+                    sgetline(ss, tmp);
                     if (tmp.find(key) == 0)
                     {
-                        return tmp.substr(key.size());
+                        L("Found value: " + key);
+                        std::string substr = tmp.substr(key.size());
+                        L("Substring is: " + substr);
+                        return substr;
                     }
+                    return "";
                 };
 
-            while(std::getline(ss, tmp))
+            L("Starting the main BM reading loop...");
+            while(sgetline(ss, tmp))
             {
                 if (tmp == "[General]")
                 {
+                    L("INSIDE THE GENERAL");
                     general.audio_filename = get_value("AudioFilename:");
                     general.preview_time = std::stoi(get_value("PreviewTime:"));
                     general.background_filename = get_value("BackgroundFilename:");
                 }
-                std::getline(ss, tmp);
+                L("Getting line EDITOR: " + tmp);
+                sgetline(ss, tmp);
+
                 if (tmp == "[Editor]")
                 {
+                    L("INSIDE THE EDITOR");
                     editor.beat_divisor = std::stoi(get_value("BeatDivisor:"));
                 }
-                std::getline(ss, tmp);
+                L("Getting line METADATA: " + tmp);
+                sgetline(ss, tmp);
+
                 if (tmp == "[Metadata]")
                 {
+                    L("INSIDE THE METADATA");
                     metadata.title = get_value("Title:");
                     metadata.artist = get_value("Artist:");
                     metadata.creator = get_value("Creator:");
                     metadata.version = get_value("Version:");
                     metadata.tags = get_value("Tags:");
-                    metadata.beatmap_id = std::stoi(get_value("BeatmapID:"));
+                    metadata.beatmap_id = std::stoi(get_value( "BeatmapID:"));
                     metadata.beatmap_set_id = std::stoi(get_value("BeatmapSetID:"));
                 }
-                std::getline(ss, tmp);
+                sgetline(ss, tmp);
+
                 if (tmp == "[Difficulty]")
                 {
                     diff.hp_drain_rate = std::stod(get_value("HPDrainRate:"));
                     diff.overall_difficulty = std::stod(get_value("OverallDifficulty:"));
                     diff.key_amount = std::stoi(get_value("KeyAmount:"));
                 }
-                std::getline(ss, tmp);
+                sgetline(ss, tmp);
+                
                 if (tmp == "[TimingPoints]")
                 {
-                    std::getline(ss, tmp);
+                    sgetline(ss, tmp);
+                    
                     while(tmp != "[HitObjects]")
                     {
                         std::istringstream iss(tmp);
@@ -83,12 +109,12 @@ namespace noma
                                                           (bool)std::stoi(tokens[4]));
                         timingPoints.push_back(tp);
 
-                        std::getline(ss, tmp);
+                        sgetline(ss, tmp);
                     }
                 }
                 if (tmp == "[HitObjects]")
                 {
-                    while(std::getline(ss, tmp))
+                    while(sgetline(ss, tmp))
                     {
                         std::istringstream iss(tmp);
                         std::vector<std::string> tokens;
@@ -129,6 +155,8 @@ namespace noma
             return bm;
 
         }
+
+        std::cerr << "ERROR WHILE OPENING FILE" << std::endl;
 
         return nullptr;
     }
@@ -219,5 +247,31 @@ namespace noma
 
         outFile.close();
 
+    }
+
+    std::istream& BeatmapReader::sgetline(std::istream& is, std::string& t)
+    {
+        t.clear();
+
+        std::istream::sentry se(is, true);
+        std::streambuf* sb = is.rdbuf();
+
+        for(;;) {
+            int c = sb->sbumpc();
+            switch (c) {
+            case '\n':
+                return is;
+            case '\r':
+                if(sb->sgetc() == '\n')
+                    sb->sbumpc();
+                return is;
+            case std::streambuf::traits_type::eof():
+                if(t.empty())
+                    is.setstate(std::ios::eofbit);
+                return is;
+            default:
+                t += (char)c;
+            }
+        }
     }
 } // namespace noma

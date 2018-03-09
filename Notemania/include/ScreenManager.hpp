@@ -3,11 +3,16 @@
 
 #include <string>
 #include <map>
-#include "Screen.hpp"
-#include "IScreenManager.hpp"
 
 namespace noma
 {
+    class Screen;
+
+    class IScreenManager
+    {
+    public:
+        virtual Screen* find_screen(const std::string& name) = 0;
+    };
 
     class ScreenManager : public IScreenManager
     {

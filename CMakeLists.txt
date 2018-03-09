@@ -4,13 +4,14 @@ project(Notemania)
 add_subdirectory(ThirdParty)
 
 include_directories(
-  ThirdParty/sfml-2.4.2/include/
+  ThirdParty/SFML-2.4.2/include/
   ${PROJECT_NAME}/include/
   )
 
 option(SFML_BUILD_EXAMPLES OFF)
 option(SFML_BUILD_DOC OFF)
 option(SFML_BUILD_SHADER_LIBS ON)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG")
 if (WIN32)
   option(SFML_USE_STATIC_STD_LIBS OFF) # Windows only
 elseif (APPLE)
@@ -22,15 +23,19 @@ elseif (APPLE)
 endif()
 option(BUILD_SHARED_LIBS OFF)
 
-set(ALL_LIBS
-  ${SFML_LIBRARY}
-  sfml-system
-  sfml-window
-  sfml-graphics
-  sfml-audio
-  sfml-network
-  sfml-main
-  )
+set (CMAKE_CXX_STANDARD 11)
+
+  set(ALL_LIBS
+    ${SFML_LIBRARY}
+    sfml-system
+    sfml-window
+    sfml-graphics
+    sfml-audio
+    sfml-network
+    
+    ) 
+#endif()
+
 
 file(GLOB NOTEMANIA_SOURCES ${PROJECT_NAME}/src/*.cpp)
 file(GLOB NOTEMANIA_HEADERS
@@ -69,7 +74,7 @@ add_executable(${PROJECT_NAME} ${ADDITIONAL_FLAGS}
   ${NOTEMANIA_SFX}  ${NOTEMANIA_CONFIGS}
   )
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
+#target_compile_features(${PROJECT_NAME} PRIVATE cxx_range_for)
 
 target_link_libraries(${PROJECT_NAME}
   ${ALL_LIBS}

@@ -7,11 +7,7 @@ namespace noma
 {
     class Screen;
 
-    class IScreenManager
-    {
-    public:
-        virtual Screen* find_screen(const std::string& name) = 0;
-    };
+    
 } // namespace noma
 
 #endif // NOMA_ISCREEN_MANAGER_HPP_
