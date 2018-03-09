@@ -4,7 +4,7 @@ namespace noma
 {
     bool send_data_package (dataPackage buff)
     {
-        sf::TcpSocket socket;
+        /*sf::TcpSocket socket;
         sf::Socket::Status status = socket.connect("localhost", 8080);
 
         if (status != sf::Socket::Done)
@@ -17,7 +17,7 @@ namespace noma
         const char* data; data = dataBuff.c_str();
 
         if (socket.send(data, strlen(data)) != sf::Socket::Done)
-            return false;
+            return false;*/
 
         return true;
     }

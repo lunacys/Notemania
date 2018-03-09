@@ -1,10 +1,12 @@
 #ifndef NOMA_SCREEN_HPP_
 #define NOMA_SCREEN_HPP_
 
-#include "IScreenManager.hpp"
+#include <string>
 
 namespace noma
 {
+    class IScreenManager;
+
     class Screen
     {
     public:

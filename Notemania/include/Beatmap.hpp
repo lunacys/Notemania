@@ -1,7 +1,6 @@
 #ifndef NOMA_BEATMAP_HPP_
 #define NOMA_BEATMAP_HPP_
 
-#include <memory>
 #include <vector>
 #include <string>
 #include "HitObject.hpp"

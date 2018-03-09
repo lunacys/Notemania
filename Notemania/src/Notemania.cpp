@@ -1,7 +1,8 @@
 #include "Notemania.hpp"
-#include <iostream>
-
+#include "Playfield.hpp"
 #include "BeatmapReader.hpp"
+#include "TestScreen.hpp"
+#include "Beatmap.hpp"
 
 namespace noma
 {
@@ -11,11 +12,13 @@ namespace noma
         
     }
 
-    Notemania::~Notemania() { }
+    Notemania::~Notemania() 
+    { }
 
     void Notemania::run()
     {
         window_.create(sf::VideoMode(window_width_, window_height_, 32), "Notemania");
+        
         initialize();
         load_content();
         total_clock_.restart();
@@ -30,12 +33,15 @@ namespace noma
 
     void Notemania::initialize()
     {
-
         Beatmap* bm = BeatmapReader::load_beatmap_from_file("maps/NOMA - Brain Power/NOMA - Brain Power.noma");
-
-        //playfield_ = new Playfield(&window_, bm);
+        // TODO: 
+        // FIXME: 
+        Playfield* playfield_ = new Playfield(&window_, bm);
         screen_manager_ = new ScreenManager();
-        screen_manager_->register_screen(new Playfield(&window_, bm), "Playfield");
+        //screen_manager_->register_screen(new Playfield(&window_, bm), "Playfield"); // not working
+        TestScreen* test = new TestScreen;
+        //screen_manager_->register_screen(test, "Test");
+        screen_manager_->register_screen(playfield_, "Playfield");
     }
 
     void Notemania::load_content()

@@ -1,4 +1,5 @@
 #include "ScreenManager.hpp"
+#include "Screen.hpp"
 
 namespace noma
 {

@@ -1,0 +1,975 @@
+{
+  "variant": {
+    "label": "Release",
+    "keywordSettings": {
+      "buildType": "release"
+    },
+    "description": "Enable optimizations, omit debug info"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Release",
+        "projects": [
+          {
+            "buildDirectory": "/home/loonacuse/Notemania/build",
+            "name": "Notemania",
+            "sourceDirectory": "/home/loonacuse/Notemania",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-network.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Network",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_NETWORK_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Ftp.cpp",
+                      "Http.cpp",
+                      "IpAddress.cpp",
+                      "Packet.cpp",
+                      "Socket.cpp",
+                      "SocketSelector.cpp",
+                      "TcpListener.cpp",
+                      "TcpSocket.cpp",
+                      "UdpSocket.cpp",
+                      "Unix/SocketImpl.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Network/Export.hpp",
+                      "../../../include/SFML/Network/Ftp.hpp",
+                      "../../../include/SFML/Network/Http.hpp",
+                      "../../../include/SFML/Network/IpAddress.hpp",
+                      "../../../include/SFML/Network/Packet.hpp",
+                      "../../../include/SFML/Network/Socket.hpp",
+                      "SocketImpl.hpp",
+                      "../../../include/SFML/Network/SocketHandle.hpp",
+                      "../../../include/SFML/Network/SocketSelector.hpp",
+                      "../../../include/SFML/Network/TcpListener.hpp",
+                      "../../../include/SFML/Network/TcpSocket.hpp",
+                      "../../../include/SFML/Network/UdpSocket.hpp",
+                      "Unix/SocketImpl.hpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-network.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-network",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Network",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/Notemania/Notemania"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "Notemania/include/Beatmap.hpp",
+                      "Notemania/include/BeatmapReader.hpp",
+                      "Notemania/include/ClientTCP.hpp",
+                      "Notemania/include/HitObject.hpp",
+                      "Notemania/include/IScreenManager.hpp",
+                      "Notemania/include/LogHelper.hpp",
+                      "Notemania/include/Notemania.hpp",
+                      "Notemania/include/Playfield.hpp",
+                      "Notemania/include/Screen.hpp",
+                      "Notemania/include/ScreenManager.hpp",
+                      "Notemania/include/TestScreen.hpp",
+                      "Notemania/include/TimingPoint.hpp",
+                      "Notemania/include/Utils.hpp",
+                      "Notemania/data/images/buttons4k.png",
+                      "Notemania/data/images/field4k.png",
+                      "Notemania/data/images/hit100.png",
+                      "Notemania/data/images/hit200.png",
+                      "Notemania/data/images/hit300.png",
+                      "Notemania/data/images/hit320.png",
+                      "Notemania/data/images/hit50.png",
+                      "Notemania/data/images/miss.png",
+                      "Notemania/data/images/note.png",
+                      "Notemania/data/images/ranking-A.png",
+                      "Notemania/data/images/ranking-B.png",
+                      "Notemania/data/images/ranking-C.png",
+                      "Notemania/data/images/ranking-D.png",
+                      "Notemania/data/images/ranking-S.png",
+                      "Notemania/data/images/ranking-X.png",
+                      "Notemania/data/images/scorescreen.png",
+                      "Notemania/data/images/single_field.png",
+                      "Notemania/data/fonts/Consolas.ttf",
+                      "Notemania/data/fonts/MainFont.ttf",
+                      "Notemania/data/sfx/hitsound.wav",
+                      "CMakeLists.txt"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG   -DCMAKE-C-FLAGS -std=gnu++11",
+                    "defines": [
+                      "GLFW_INCLUDE_NONE",
+                      "PROJECT_SOURCE_DIR=\"/home/loonacuse/Notemania\""
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/Notemania/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Notemania/src/Beatmap.cpp",
+                      "Notemania/src/BeatmapReader.cpp",
+                      "Notemania/src/ClientTCP.cpp",
+                      "Notemania/src/HitObject.cpp",
+                      "Notemania/src/Notemania.cpp",
+                      "Notemania/src/Playfield.cpp",
+                      "Notemania/src/Screen.cpp",
+                      "Notemania/src/ScreenManager.cpp",
+                      "Notemania/src/TestScreen.cpp",
+                      "Notemania/src/TimingPoint.cpp",
+                      "Notemania/src/main.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "Notemania",
+                "linkFlags": "-rdynamic",
+                "linkLanguageFlags": "-O3 -DNDEBUG",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib ThirdParty/SFML-2.4.2/lib/libsfml-graphics.so.2.4.2 ThirdParty/SFML-2.4.2/lib/libsfml-audio.so.2.4.2 ThirdParty/SFML-2.4.2/lib/libsfml-network.so.2.4.2 ThirdParty/SFML-2.4.2/lib/libsfml-window.so.2.4.2 -lXrandr -ludev -lX11 -lGL -lXext -lfreetype -ljpeg -lopenal -lvorbisenc -lvorbisfile -lvorbis -logg -lFLAC ThirdParty/SFML-2.4.2/lib/libsfml-system.so.2.4.2 -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "Notemania",
+                "sourceDirectory": "/home/loonacuse/Notemania",
+                "type": "EXECUTABLE"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-system.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/System",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/System/Clock.hpp",
+                      "../../../include/SFML/System/Err.hpp",
+                      "../../../include/SFML/System/Export.hpp",
+                      "../../../include/SFML/System/InputStream.hpp",
+                      "../../../include/SFML/System/Lock.hpp",
+                      "../../../include/SFML/System/Mutex.hpp",
+                      "../../../include/SFML/System/NativeActivity.hpp",
+                      "../../../include/SFML/System/NonCopyable.hpp",
+                      "../../../include/SFML/System/Sleep.hpp",
+                      "../../../include/SFML/System/String.hpp",
+                      "../../../include/SFML/System/String.inl",
+                      "../../../include/SFML/System/Thread.hpp",
+                      "../../../include/SFML/System/Thread.inl",
+                      "../../../include/SFML/System/ThreadLocal.hpp",
+                      "../../../include/SFML/System/ThreadLocalPtr.hpp",
+                      "../../../include/SFML/System/ThreadLocalPtr.inl",
+                      "../../../include/SFML/System/Time.hpp",
+                      "../../../include/SFML/System/Utf.hpp",
+                      "../../../include/SFML/System/Utf.inl",
+                      "../../../include/SFML/System/Vector2.hpp",
+                      "../../../include/SFML/System/Vector2.inl",
+                      "../../../include/SFML/System/Vector3.hpp",
+                      "../../../include/SFML/System/Vector3.inl",
+                      "../../../include/SFML/System/FileInputStream.hpp",
+                      "../../../include/SFML/System/MemoryInputStream.hpp",
+                      "Unix/ClockImpl.hpp",
+                      "Unix/MutexImpl.hpp",
+                      "Unix/SleepImpl.hpp",
+                      "Unix/ThreadImpl.hpp",
+                      "Unix/ThreadLocalImpl.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_SYSTEM_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Clock.cpp",
+                      "Err.cpp",
+                      "Lock.cpp",
+                      "Mutex.cpp",
+                      "Sleep.cpp",
+                      "String.cpp",
+                      "Thread.cpp",
+                      "ThreadLocal.cpp",
+                      "Time.cpp",
+                      "FileInputStream.cpp",
+                      "MemoryInputStream.cpp",
+                      "Unix/ClockImpl.cpp",
+                      "Unix/MutexImpl.cpp",
+                      "Unix/SleepImpl.cpp",
+                      "Unix/ThreadImpl.cpp",
+                      "Unix/ThreadLocalImpl.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-system.so",
+                "linkLibraries": "-lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-system",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/System",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-audio.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Audio",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "ALCheck.hpp",
+                      "../../../include/SFML/Audio/AlResource.hpp",
+                      "AudioDevice.hpp",
+                      "../../../include/SFML/Audio/Export.hpp",
+                      "../../../include/SFML/Audio/Listener.hpp",
+                      "../../../include/SFML/Audio/Music.hpp",
+                      "../../../include/SFML/Audio/Sound.hpp",
+                      "../../../include/SFML/Audio/SoundBuffer.hpp",
+                      "../../../include/SFML/Audio/SoundBufferRecorder.hpp",
+                      "../../../include/SFML/Audio/InputSoundFile.hpp",
+                      "../../../include/SFML/Audio/OutputSoundFile.hpp",
+                      "../../../include/SFML/Audio/SoundRecorder.hpp",
+                      "../../../include/SFML/Audio/SoundSource.hpp",
+                      "../../../include/SFML/Audio/SoundStream.hpp",
+                      "../../../include/SFML/Audio/SoundFileFactory.hpp",
+                      "../../../include/SFML/Audio/SoundFileFactory.inl",
+                      "../../../include/SFML/Audio/SoundFileReader.hpp",
+                      "SoundFileReaderFlac.hpp",
+                      "SoundFileReaderOgg.hpp",
+                      "SoundFileReaderWav.hpp",
+                      "../../../include/SFML/Audio/SoundFileWriter.hpp",
+                      "SoundFileWriterFlac.hpp",
+                      "SoundFileWriterOgg.hpp",
+                      "SoundFileWriterWav.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "FLAC__NO_DLL",
+                      "OV_EXCLUDE_STATIC_CALLBACKS",
+                      "SFML_AUDIO_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      },
+                      {
+                        "path": "/usr/include/AL"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "ALCheck.cpp",
+                      "AlResource.cpp",
+                      "AudioDevice.cpp",
+                      "Listener.cpp",
+                      "Music.cpp",
+                      "Sound.cpp",
+                      "SoundBuffer.cpp",
+                      "SoundBufferRecorder.cpp",
+                      "InputSoundFile.cpp",
+                      "OutputSoundFile.cpp",
+                      "SoundRecorder.cpp",
+                      "SoundSource.cpp",
+                      "SoundStream.cpp",
+                      "SoundFileFactory.cpp",
+                      "SoundFileReaderFlac.cpp",
+                      "SoundFileReaderOgg.cpp",
+                      "SoundFileReaderWav.cpp",
+                      "SoundFileWriterFlac.cpp",
+                      "SoundFileWriterOgg.cpp",
+                      "SoundFileWriterWav.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-audio.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lopenal -lvorbisenc -lvorbisfile -lvorbis -logg -lFLAC -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-audio",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Audio",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-window.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Window",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Window/Context.hpp",
+                      "../../../include/SFML/Window/Export.hpp",
+                      "GlContext.hpp",
+                      "../../../include/SFML/Window/GlResource.hpp",
+                      "../../../include/SFML/Window/ContextSettings.hpp",
+                      "../../../include/SFML/Window/Event.hpp",
+                      "InputImpl.hpp",
+                      "../../../include/SFML/Window/Joystick.hpp",
+                      "JoystickImpl.hpp",
+                      "JoystickManager.hpp",
+                      "../../../include/SFML/Window/Keyboard.hpp",
+                      "../../../include/SFML/Window/Mouse.hpp",
+                      "../../../include/SFML/Window/Touch.hpp",
+                      "../../../include/SFML/Window/Sensor.hpp",
+                      "SensorImpl.hpp",
+                      "SensorManager.hpp",
+                      "../../../include/SFML/Window/VideoMode.hpp",
+                      "VideoModeImpl.hpp",
+                      "../../../include/SFML/Window/Window.hpp",
+                      "../../../include/SFML/Window/WindowHandle.hpp",
+                      "WindowImpl.hpp",
+                      "../../../include/SFML/Window/WindowStyle.hpp",
+                      "Unix/Display.hpp",
+                      "Unix/InputImpl.hpp",
+                      "Unix/SensorImpl.hpp",
+                      "Unix/WindowImplX11.hpp",
+                      "Unix/GlxContext.hpp",
+                      "Unix/GlxExtensions.hpp",
+                      "Unix/JoystickImpl.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_WINDOW_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Context.cpp",
+                      "GlContext.cpp",
+                      "GlResource.cpp",
+                      "Joystick.cpp",
+                      "JoystickManager.cpp",
+                      "Keyboard.cpp",
+                      "Mouse.cpp",
+                      "Touch.cpp",
+                      "Sensor.cpp",
+                      "SensorManager.cpp",
+                      "VideoMode.cpp",
+                      "Window.cpp",
+                      "WindowImpl.cpp",
+                      "Unix/Display.cpp",
+                      "Unix/InputImpl.cpp",
+                      "Unix/SensorImpl.cpp",
+                      "Unix/VideoModeImpl.cpp",
+                      "Unix/WindowImplX11.cpp",
+                      "Unix/GlxContext.cpp",
+                      "Unix/GlxExtensions.cpp",
+                      "Unix/JoystickImpl.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-window.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lX11 -lXrandr -ludev -lGL -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-window",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Window",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-graphics.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Graphics",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Graphics/BlendMode.hpp",
+                      "../../../include/SFML/Graphics/Color.hpp",
+                      "../../../include/SFML/Graphics/Export.hpp",
+                      "../../../include/SFML/Graphics/Font.hpp",
+                      "../../../include/SFML/Graphics/Glsl.hpp",
+                      "../../../include/SFML/Graphics/Glsl.inl",
+                      "../../../include/SFML/Graphics/Glyph.hpp",
+                      "GLCheck.hpp",
+                      "GLExtensions.hpp",
+                      "../../../include/SFML/Graphics/Image.hpp",
+                      "ImageLoader.hpp",
+                      "../../../include/SFML/Graphics/PrimitiveType.hpp",
+                      "../../../include/SFML/Graphics/Rect.hpp",
+                      "../../../include/SFML/Graphics/Rect.inl",
+                      "../../../include/SFML/Graphics/RenderStates.hpp",
+                      "../../../include/SFML/Graphics/RenderTexture.hpp",
+                      "../../../include/SFML/Graphics/RenderTarget.hpp",
+                      "../../../include/SFML/Graphics/RenderWindow.hpp",
+                      "../../../include/SFML/Graphics/Shader.hpp",
+                      "../../../include/SFML/Graphics/Texture.hpp",
+                      "TextureSaver.hpp",
+                      "../../../include/SFML/Graphics/Transform.hpp",
+                      "../../../include/SFML/Graphics/Transformable.hpp",
+                      "../../../include/SFML/Graphics/View.hpp",
+                      "../../../include/SFML/Graphics/Vertex.hpp",
+                      "GLLoader.hpp",
+                      "../../../include/SFML/Graphics/Drawable.hpp",
+                      "../../../include/SFML/Graphics/Shape.hpp",
+                      "../../../include/SFML/Graphics/CircleShape.hpp",
+                      "../../../include/SFML/Graphics/RectangleShape.hpp",
+                      "../../../include/SFML/Graphics/ConvexShape.hpp",
+                      "../../../include/SFML/Graphics/Sprite.hpp",
+                      "../../../include/SFML/Graphics/Text.hpp",
+                      "../../../include/SFML/Graphics/VertexArray.hpp",
+                      "RenderTextureImpl.hpp",
+                      "RenderTextureImplFBO.hpp",
+                      "RenderTextureImplDefault.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_GRAPHICS_EXPORTS",
+                      "STBI_FAILURE_USERMSG"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/extlibs/headers/stb_image"
+                      },
+                      {
+                        "path": "/usr/include/freetype2"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "BlendMode.cpp",
+                      "Color.cpp",
+                      "Font.cpp",
+                      "Glsl.cpp",
+                      "GLCheck.cpp",
+                      "GLExtensions.cpp",
+                      "Image.cpp",
+                      "ImageLoader.cpp",
+                      "RenderStates.cpp",
+                      "RenderTexture.cpp",
+                      "RenderTarget.cpp",
+                      "RenderWindow.cpp",
+                      "Shader.cpp",
+                      "Texture.cpp",
+                      "TextureSaver.cpp",
+                      "Transform.cpp",
+                      "Transformable.cpp",
+                      "View.cpp",
+                      "Vertex.cpp",
+                      "GLLoader.cpp",
+                      "Shape.cpp",
+                      "CircleShape.cpp",
+                      "RectangleShape.cpp",
+                      "ConvexShape.cpp",
+                      "Sprite.cpp",
+                      "Text.cpp",
+                      "VertexArray.cpp",
+                      "RenderTextureImpl.cpp",
+                      "RenderTextureImplFBO.cpp",
+                      "RenderTextureImplDefault.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-graphics.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-window.so.2.4.2 ../../../lib/libsfml-system.so.2.4.2 -lGL -lX11 -lXext -lfreetype -ljpeg -lpthread -lrt -lXrandr -ludev -lGL",
+                "linkerLanguage": "CXX",
+                "name": "sfml-graphics",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Graphics",
+                "type": "SHARED_LIBRARY"
+              }
+            ]
+          },
+          {
+            "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2",
+            "name": "SFML",
+            "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2",
+            "targets": [
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-network.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Network",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_NETWORK_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Ftp.cpp",
+                      "Http.cpp",
+                      "IpAddress.cpp",
+                      "Packet.cpp",
+                      "Socket.cpp",
+                      "SocketSelector.cpp",
+                      "TcpListener.cpp",
+                      "TcpSocket.cpp",
+                      "UdpSocket.cpp",
+                      "Unix/SocketImpl.cpp"
+                    ]
+                  },
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Network/Export.hpp",
+                      "../../../include/SFML/Network/Ftp.hpp",
+                      "../../../include/SFML/Network/Http.hpp",
+                      "../../../include/SFML/Network/IpAddress.hpp",
+                      "../../../include/SFML/Network/Packet.hpp",
+                      "../../../include/SFML/Network/Socket.hpp",
+                      "SocketImpl.hpp",
+                      "../../../include/SFML/Network/SocketHandle.hpp",
+                      "../../../include/SFML/Network/SocketSelector.hpp",
+                      "../../../include/SFML/Network/TcpListener.hpp",
+                      "../../../include/SFML/Network/TcpSocket.hpp",
+                      "../../../include/SFML/Network/UdpSocket.hpp",
+                      "Unix/SocketImpl.hpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-network.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-network",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Network",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-system.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/System",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/System/Clock.hpp",
+                      "../../../include/SFML/System/Err.hpp",
+                      "../../../include/SFML/System/Export.hpp",
+                      "../../../include/SFML/System/InputStream.hpp",
+                      "../../../include/SFML/System/Lock.hpp",
+                      "../../../include/SFML/System/Mutex.hpp",
+                      "../../../include/SFML/System/NativeActivity.hpp",
+                      "../../../include/SFML/System/NonCopyable.hpp",
+                      "../../../include/SFML/System/Sleep.hpp",
+                      "../../../include/SFML/System/String.hpp",
+                      "../../../include/SFML/System/String.inl",
+                      "../../../include/SFML/System/Thread.hpp",
+                      "../../../include/SFML/System/Thread.inl",
+                      "../../../include/SFML/System/ThreadLocal.hpp",
+                      "../../../include/SFML/System/ThreadLocalPtr.hpp",
+                      "../../../include/SFML/System/ThreadLocalPtr.inl",
+                      "../../../include/SFML/System/Time.hpp",
+                      "../../../include/SFML/System/Utf.hpp",
+                      "../../../include/SFML/System/Utf.inl",
+                      "../../../include/SFML/System/Vector2.hpp",
+                      "../../../include/SFML/System/Vector2.inl",
+                      "../../../include/SFML/System/Vector3.hpp",
+                      "../../../include/SFML/System/Vector3.inl",
+                      "../../../include/SFML/System/FileInputStream.hpp",
+                      "../../../include/SFML/System/MemoryInputStream.hpp",
+                      "Unix/ClockImpl.hpp",
+                      "Unix/MutexImpl.hpp",
+                      "Unix/SleepImpl.hpp",
+                      "Unix/ThreadImpl.hpp",
+                      "Unix/ThreadLocalImpl.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_SYSTEM_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Clock.cpp",
+                      "Err.cpp",
+                      "Lock.cpp",
+                      "Mutex.cpp",
+                      "Sleep.cpp",
+                      "String.cpp",
+                      "Thread.cpp",
+                      "ThreadLocal.cpp",
+                      "Time.cpp",
+                      "FileInputStream.cpp",
+                      "MemoryInputStream.cpp",
+                      "Unix/ClockImpl.cpp",
+                      "Unix/MutexImpl.cpp",
+                      "Unix/SleepImpl.cpp",
+                      "Unix/ThreadImpl.cpp",
+                      "Unix/ThreadLocalImpl.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-system.so",
+                "linkLibraries": "-lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-system",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/System",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-audio.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Audio",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "ALCheck.hpp",
+                      "../../../include/SFML/Audio/AlResource.hpp",
+                      "AudioDevice.hpp",
+                      "../../../include/SFML/Audio/Export.hpp",
+                      "../../../include/SFML/Audio/Listener.hpp",
+                      "../../../include/SFML/Audio/Music.hpp",
+                      "../../../include/SFML/Audio/Sound.hpp",
+                      "../../../include/SFML/Audio/SoundBuffer.hpp",
+                      "../../../include/SFML/Audio/SoundBufferRecorder.hpp",
+                      "../../../include/SFML/Audio/InputSoundFile.hpp",
+                      "../../../include/SFML/Audio/OutputSoundFile.hpp",
+                      "../../../include/SFML/Audio/SoundRecorder.hpp",
+                      "../../../include/SFML/Audio/SoundSource.hpp",
+                      "../../../include/SFML/Audio/SoundStream.hpp",
+                      "../../../include/SFML/Audio/SoundFileFactory.hpp",
+                      "../../../include/SFML/Audio/SoundFileFactory.inl",
+                      "../../../include/SFML/Audio/SoundFileReader.hpp",
+                      "SoundFileReaderFlac.hpp",
+                      "SoundFileReaderOgg.hpp",
+                      "SoundFileReaderWav.hpp",
+                      "../../../include/SFML/Audio/SoundFileWriter.hpp",
+                      "SoundFileWriterFlac.hpp",
+                      "SoundFileWriterOgg.hpp",
+                      "SoundFileWriterWav.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "FLAC__NO_DLL",
+                      "OV_EXCLUDE_STATIC_CALLBACKS",
+                      "SFML_AUDIO_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      },
+                      {
+                        "path": "/usr/include/AL"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "ALCheck.cpp",
+                      "AlResource.cpp",
+                      "AudioDevice.cpp",
+                      "Listener.cpp",
+                      "Music.cpp",
+                      "Sound.cpp",
+                      "SoundBuffer.cpp",
+                      "SoundBufferRecorder.cpp",
+                      "InputSoundFile.cpp",
+                      "OutputSoundFile.cpp",
+                      "SoundRecorder.cpp",
+                      "SoundSource.cpp",
+                      "SoundStream.cpp",
+                      "SoundFileFactory.cpp",
+                      "SoundFileReaderFlac.cpp",
+                      "SoundFileReaderOgg.cpp",
+                      "SoundFileReaderWav.cpp",
+                      "SoundFileWriterFlac.cpp",
+                      "SoundFileWriterOgg.cpp",
+                      "SoundFileWriterWav.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-audio.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lopenal -lvorbisenc -lvorbisfile -lvorbis -logg -lFLAC -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-audio",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Audio",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-window.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Window",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Window/Context.hpp",
+                      "../../../include/SFML/Window/Export.hpp",
+                      "GlContext.hpp",
+                      "../../../include/SFML/Window/GlResource.hpp",
+                      "../../../include/SFML/Window/ContextSettings.hpp",
+                      "../../../include/SFML/Window/Event.hpp",
+                      "InputImpl.hpp",
+                      "../../../include/SFML/Window/Joystick.hpp",
+                      "JoystickImpl.hpp",
+                      "JoystickManager.hpp",
+                      "../../../include/SFML/Window/Keyboard.hpp",
+                      "../../../include/SFML/Window/Mouse.hpp",
+                      "../../../include/SFML/Window/Touch.hpp",
+                      "../../../include/SFML/Window/Sensor.hpp",
+                      "SensorImpl.hpp",
+                      "SensorManager.hpp",
+                      "../../../include/SFML/Window/VideoMode.hpp",
+                      "VideoModeImpl.hpp",
+                      "../../../include/SFML/Window/Window.hpp",
+                      "../../../include/SFML/Window/WindowHandle.hpp",
+                      "WindowImpl.hpp",
+                      "../../../include/SFML/Window/WindowStyle.hpp",
+                      "Unix/Display.hpp",
+                      "Unix/InputImpl.hpp",
+                      "Unix/SensorImpl.hpp",
+                      "Unix/WindowImplX11.hpp",
+                      "Unix/GlxContext.hpp",
+                      "Unix/GlxExtensions.hpp",
+                      "Unix/JoystickImpl.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_WINDOW_EXPORTS"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "Context.cpp",
+                      "GlContext.cpp",
+                      "GlResource.cpp",
+                      "Joystick.cpp",
+                      "JoystickManager.cpp",
+                      "Keyboard.cpp",
+                      "Mouse.cpp",
+                      "Touch.cpp",
+                      "Sensor.cpp",
+                      "SensorManager.cpp",
+                      "VideoMode.cpp",
+                      "Window.cpp",
+                      "WindowImpl.cpp",
+                      "Unix/Display.cpp",
+                      "Unix/InputImpl.cpp",
+                      "Unix/SensorImpl.cpp",
+                      "Unix/VideoModeImpl.cpp",
+                      "Unix/WindowImplX11.cpp",
+                      "Unix/GlxContext.cpp",
+                      "Unix/GlxExtensions.cpp",
+                      "Unix/JoystickImpl.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-window.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-system.so.2.4.2 -lX11 -lXrandr -ludev -lGL -lpthread -lrt",
+                "linkerLanguage": "CXX",
+                "name": "sfml-window",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Window",
+                "type": "SHARED_LIBRARY"
+              },
+              {
+                "artifacts": [
+                  "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib/libsfml-graphics.so"
+                ],
+                "buildDirectory": "/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/src/SFML/Graphics",
+                "fileGroups": [
+                  {
+                    "isGenerated": false,
+                    "sources": [
+                      "../../../include/SFML/Graphics/BlendMode.hpp",
+                      "../../../include/SFML/Graphics/Color.hpp",
+                      "../../../include/SFML/Graphics/Export.hpp",
+                      "../../../include/SFML/Graphics/Font.hpp",
+                      "../../../include/SFML/Graphics/Glsl.hpp",
+                      "../../../include/SFML/Graphics/Glsl.inl",
+                      "../../../include/SFML/Graphics/Glyph.hpp",
+                      "GLCheck.hpp",
+                      "GLExtensions.hpp",
+                      "../../../include/SFML/Graphics/Image.hpp",
+                      "ImageLoader.hpp",
+                      "../../../include/SFML/Graphics/PrimitiveType.hpp",
+                      "../../../include/SFML/Graphics/Rect.hpp",
+                      "../../../include/SFML/Graphics/Rect.inl",
+                      "../../../include/SFML/Graphics/RenderStates.hpp",
+                      "../../../include/SFML/Graphics/RenderTexture.hpp",
+                      "../../../include/SFML/Graphics/RenderTarget.hpp",
+                      "../../../include/SFML/Graphics/RenderWindow.hpp",
+                      "../../../include/SFML/Graphics/Shader.hpp",
+                      "../../../include/SFML/Graphics/Texture.hpp",
+                      "TextureSaver.hpp",
+                      "../../../include/SFML/Graphics/Transform.hpp",
+                      "../../../include/SFML/Graphics/Transformable.hpp",
+                      "../../../include/SFML/Graphics/View.hpp",
+                      "../../../include/SFML/Graphics/Vertex.hpp",
+                      "GLLoader.hpp",
+                      "../../../include/SFML/Graphics/Drawable.hpp",
+                      "../../../include/SFML/Graphics/Shape.hpp",
+                      "../../../include/SFML/Graphics/CircleShape.hpp",
+                      "../../../include/SFML/Graphics/RectangleShape.hpp",
+                      "../../../include/SFML/Graphics/ConvexShape.hpp",
+                      "../../../include/SFML/Graphics/Sprite.hpp",
+                      "../../../include/SFML/Graphics/Text.hpp",
+                      "../../../include/SFML/Graphics/VertexArray.hpp",
+                      "RenderTextureImpl.hpp",
+                      "RenderTextureImplFBO.hpp",
+                      "RenderTextureImplDefault.hpp"
+                    ]
+                  },
+                  {
+                    "compileFlags": "-O3 -DNDEBUG -fPIC   -fvisibility=hidden",
+                    "defines": [
+                      "SFML_GRAPHICS_EXPORTS",
+                      "STBI_FAILURE_USERMSG"
+                    ],
+                    "includePath": [
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/include"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src"
+                      },
+                      {
+                        "path": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/extlibs/headers/stb_image"
+                      },
+                      {
+                        "path": "/usr/include/freetype2"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "BlendMode.cpp",
+                      "Color.cpp",
+                      "Font.cpp",
+                      "Glsl.cpp",
+                      "GLCheck.cpp",
+                      "GLExtensions.cpp",
+                      "Image.cpp",
+                      "ImageLoader.cpp",
+                      "RenderStates.cpp",
+                      "RenderTexture.cpp",
+                      "RenderTarget.cpp",
+                      "RenderWindow.cpp",
+                      "Shader.cpp",
+                      "Texture.cpp",
+                      "TextureSaver.cpp",
+                      "Transform.cpp",
+                      "Transformable.cpp",
+                      "View.cpp",
+                      "Vertex.cpp",
+                      "GLLoader.cpp",
+                      "Shape.cpp",
+                      "CircleShape.cpp",
+                      "RectangleShape.cpp",
+                      "ConvexShape.cpp",
+                      "Sprite.cpp",
+                      "Text.cpp",
+                      "VertexArray.cpp",
+                      "RenderTextureImpl.cpp",
+                      "RenderTextureImplFBO.cpp",
+                      "RenderTextureImplDefault.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "libsfml-graphics.so",
+                "linkLibraries": "-Wl,-rpath,/home/loonacuse/Notemania/build/ThirdParty/SFML-2.4.2/lib: ../../../lib/libsfml-window.so.2.4.2 ../../../lib/libsfml-system.so.2.4.2 -lGL -lX11 -lXext -lfreetype -ljpeg -lpthread -lrt -lXrandr -ludev -lGL",
+                "linkerLanguage": "CXX",
+                "name": "sfml-graphics",
+                "sourceDirectory": "/home/loonacuse/Notemania/ThirdParty/SFML-2.4.2/src/SFML/Graphics",
+                "type": "SHARED_LIBRARY"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.4039120282565829",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}

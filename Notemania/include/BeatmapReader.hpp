@@ -1,20 +1,12 @@
-#ifndef NOMA_BEATMAP_READER_HPP_
+#ifndef NOMA_BEATMAP_READER_HPP_ 
 #define NOMA_BEATMAP_READER_HPP_
 
 #include <string>
-#include <memory>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-#include <istream>
-#include "TimingPoint.hpp"
-#include "Beatmap.hpp"
-#include <iomanip>
-#include <algorithm>
-#include <iterator>
 
 namespace noma
 {
+    class Beatmap;
+
     class BeatmapReader
     {
     public:
@@ -22,6 +14,7 @@ namespace noma
         static void save_beatmap_to_file(Beatmap* beatmap, std::string filename);
 
     private:
+        static std::istream& sgetline(std::istream& is, std::string& t);
     };
 } // namespace noma
 
